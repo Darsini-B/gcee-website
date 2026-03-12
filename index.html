@@ -1,0 +1,2714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🏛️ GCEE</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#f4f7ff,#eef2ff);
+color:#333;
+}
+
+section{
+position:relative;
+z-index:1;
+background:white;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#0f2f66,#173d7a,#0f2f66);
+padding:50px 0;
+border-bottom:3px solid #ffd000;
+}
+
+/* HEADER CONTAINER */
+
+.header-container{
+
+width:100%;
+max-width:1100px;   /* keeps logos near text */
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:center;  /* center everything */
+
+gap:40px;   /* space between logo and text */
+
+}
+
+/* LOGOS */
+
+
+.logo-left img,
+.logo-right img{
+
+height:125px;
+transition:transform 0.3s;
+
+}
+
+.logo-left img:hover,
+.logo-right img:hover{
+
+transform:scale(1.08);
+
+}
+
+/* CENTER TEXT */
+
+.header-text{
+
+text-align:center;
+color:white;
+
+}
+
+/* TAMIL TITLE */
+
+.tamil-title{
+
+font-size:22px;
+margin-bottom:5px;
+
+}
+
+/* ENGLISH TITLE */
+
+.english-title{
+
+font-size:34px;
+font-weight:bold;
+margin-bottom:5px;
+
+}
+
+/* AFFILIATION */
+
+.affiliation{
+
+font-size:15px;
+color:#ffd000;
+
+}
+
+/* MOBILE */
+
+/* MOBILE + TABLET RESPONSIVE */
+
+@media(max-width:900px){
+
+.header{
+padding:20px 10px;
+}
+
+.header-container{
+flex-direction:row;
+justify-content:space-between;
+gap:10px;
+text-align:center;
+}
+
+/* LOGOS */
+
+.logo-left img,
+.logo-right img{
+height:55px;
+}
+
+/* TEXT */
+
+.header-text{
+flex:1;
+text-align:center;
+padding:0 8px;
+}
+
+.tamil-title{
+font-size:16px;
+}
+
+.english-title{
+font-size:20px;
+line-height:1.3;
+}
+
+.affiliation{
+font-size:13px;
+}
+
+}
+
+/* SMALL MOBILE DEVICES */
+
+@media(max-width:480px){
+
+.logo-left img,
+.logo-right img{
+height:55px;
+}
+
+.tamil-title{
+font-size:16px;
+}
+
+.english-title{
+font-size:20px;
+}
+
+.affiliation{
+font-size:12px;
+}
+
+}
+
+/* LARGE SCREEN IMPROVEMENT */
+
+@media(min-width:1400px){
+
+.header-container{
+max-width:1300px;
+gap:60px;
+}
+
+.logo-left img,
+.logo-right img{
+height:140px;
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+background:#0f2f66;
+padding:14px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 14px;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+nav a:after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#ffd000;
+transition:.3s;
+}
+
+nav a:hover:after{
+width:100%;
+}
+
+/* NAV CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+/* HAMBURGER */
+
+.menu-icon{
+display:none;
+font-size:26px;
+color:white;
+position:absolute;
+left:20px;
+cursor:pointer;
+}
+
+/* MOBILE NAVBAR */
+
+@media(max-width:900px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#0f2f66;
+flex-direction:column;
+align-items:center;
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+}
+
+.nav-links a{
+padding:1px;
+display:block;
+}
+
+.nav-links.active{
+max-height:100vh;
+overflow-y:auto;
+}
+
+}
+
+/* HERO SLIDER */
+
+.hero-container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 0;
+
+background:linear-gradient(135deg,#0f2f66,#081d3c);
+}
+
+.slider-wrapper{
+width:85%;
+height:450px;
+overflow:hidden;
+position:relative;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.slider{
+display:flex;
+height:100%;
+transition:transform 1s ease;
+}
+
+.slide{
+min-width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.slide img{
+width:80%;
+border-radius:18px;
+box-shadow:0 30px 60px rgba(0,0,0,0.5);
+transition:0.4s;
+}
+
+.slide img:hover{
+transform:scale(1.03);
+}
+
+/* ARROWS */
+
+.prev,.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:white;
+border:none;
+font-size:30px;
+padding:12px 18px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.prev{left:20px;}
+.next{right:20px;}
+
+/* DOTS */
+
+.dots{
+position:absolute;
+bottom:20px;
+width:100%;
+text-align:center;
+}
+
+.dots span{
+height:12px;
+width:12px;
+margin:0 6px;
+background:#bbb;
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
+}
+
+.dots span.active{
+background:#0f2f66;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement-bar{
+width:85%;
+margin:30px auto;
+background:linear-gradient(135deg,#ffffff,#f1f4ff);
+padding:14px 20px;
+border-left:6px solid #ff3c3c;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+font-weight:600;
+color:#c60000;
+}
+
+.about-section{
+width:100%;
+min-height:100vh;
+padding:60px 8%;
+background:linear-gradient(180deg,#dcdee3,#b2c2f8);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;   /* important change */
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+color:#0f2f66;
+margin-bottom:30px;
+letter-spacing:1px;
+}
+
+.about-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.about-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.about-card h3{
+color:#0f2f66;
+margin-bottom:10px;
+}
+
+.about-card p{
+font-size:15px;
+line-height:1.7;
+}
+
+.about-card ul{
+padding-left:18px;
+}
+
+.about-card li{
+margin-bottom:6px;
+}
+
+/* ABOUT FLOW SECTION */
+
+#about{
+scroll-margin-top:80px;
+}
+
+.about-flow{
+width:95%;
+margin:80px auto;
+text-align:center;
+}
+
+.about-title{
+font-size:28px;
+color:#0f2f66;
+margin-bottom:40px;
+}
+
+/* FLOW LAYOUT */
+
+.flow-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:20px;
+}
+
+/* CARDS */
+
+.flow-card{
+background:linear-gradient(135deg,#0f2f66,#1a4f80);
+color:white;
+width:240px;
+height:220px;
+padding:22px;
+border-radius:14px;
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.flow-card:hover{
+transform:translateY(-8px);
+background:linear-gradient(135deg,#0c2a59,#123f7a);
+}
+
+.flow-card:hover{
+transform:translateY(-5px);
+background:#0f2f66;
+}
+
+.flow-card h3{
+margin-bottom:10px;
+font-size:16px;
+}
+
+.flow-card p,
+.flow-card li{
+font-size:13px;
+line-height:1.5;
+}
+
+.flow-card ul{
+padding-left:15px;
+text-align:left;
+}
+
+.flow-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:30px;
+}
+
+/* ARROWS */
+
+.arrow{
+font-size:26px;
+color:#0f2f66;
+font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.flow-container{
+flex-direction:column;
+}
+
+.arrow{
+transform:rotate(90deg);
+}
+
+}
+
+/* ACADEMICS SECTION */
+
+#academics{
+scroll-margin-top:80px;
+}
+
+.academics-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:#0f2f66;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.academics-title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+letter-spacing:1px;
+}
+
+/* DASHBOARD GRID */
+
+.dashboard{
+width:100%;
+max-width:1200px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:2px;
+background:#233554;
+border-radius:6px;
+overflow:hidden;
+}
+/* COLUMN */
+
+.column{
+background:#0a192f;
+display:flex;
+flex-direction:column;
+}
+
+/* COLUMN HEADER */
+
+.col-header{
+padding:14px;
+text-align:center;
+font-size:16px;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.header-blue{background:#3abff8;color:#0a192f;}
+.header-coral{background:#f87272;color:#0a192f;}
+.header-green{background:#36d399;color:#0a192f;}
+
+/* ROW */
+
+.row{
+padding:18px;
+border-bottom:1px solid #233554;
+flex-grow:1;
+}
+
+.row h3{
+margin-top:0;
+font-size:14px;
+margin-bottom:12px;
+color:#ccd6f6;
+text-transform:uppercase;
+}
+
+/* PILLS */
+
+.pill-container{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.pill{
+padding:6px 14px;
+border-radius:50px;
+border:1.5px solid;
+text-decoration:none;
+color:white;
+font-size:12px;
+transition:0.3s;
+}
+
+/* COLORS */
+
+.pill-blue{border-color:#3abff8;}
+.pill-blue:hover{background:#3abff8;color:#0a192f;}
+
+.pill-coral{border-color:#f87272;}
+.pill-coral:hover{background:#f87272;color:#0a192f;}
+
+.pill-green{border-color:#36d399;}
+.pill-green:hover{background:#36d399;color:#0a192f;}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.dashboard{
+grid-template-columns:1fr;
+}
+}
+
+/* WELCOME */
+
+.welcome{
+width:100%;
+
+margin:20px auto;
+background:rgba(255,255,255,0.9);
+padding:40px;border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+backdrop-filter:blur(8px);
+}
+
+.welcome h2{
+color:#0f2f66;
+margin-bottom:15px;
+}
+
+.welcome p{
+font-size:15px;
+line: height 1.5em;;
+text-align:justify;
+}
+
+/* ABOUT EXTRA INFO (Principal + Fees) */
+
+.about-extra{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:120px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.about-box{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.about-box img{
+width:150px;
+height:110px;
+border-radius:15px;
+border:3px solid yellow;
+object-fit:cover;
+}
+
+.about-box h4{
+color:#001f66;
+margin-bottom:5px;
+font-size:16px;
+}
+
+.about-box p{
+color:#001f66;
+font-weight:500;
+}
+
+.fees-link{
+text-decoration:none;
+color:#001f66;
+font-weight:bold;
+}
+
+.fees-link:hover{
+text-decoration:underline;
+}
+/* STATISTICS SECTION */
+
+.stats-section{
+width:100%;
+padding:100px 0;
+background:
+linear-gradient(rgba(10,25,47,0.8),rgba(10,25,47,0.9)),
+url("images/night.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.stats{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.stat-circle{
+width:180px;
+height:180px;
+border-radius:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+font-weight:bold;
+backdrop-filter:blur(5px);
+transition:transform 0.3s;
+}
+
+.stat-circle:hover{
+transform:scale(1.08);
+}
+
+/* COLORS */
+
+.light{
+background:rgba(255,255,255,0.8);
+color:#2c2c2c;
+}
+
+.dark{
+background:rgba(45,0,80,0.85);
+}
+
+.purple{
+background:rgba(90,40,160,0.85);
+}
+
+.grey{
+background:rgba(180,180,180,0.9);
+color:#222;
+}
+
+.stat-circle h2{
+font-size:36px;
+margin-bottom:5px;
+}
+
+.stat-circle p{
+font-size:14px;
+padding:0 15px;
+}
+
+/* FACILITIES SECTION */
+
+#facilities{
+scroll-margin-top:80px;
+}
+
+.facilities-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:linear-gradient(135deg,#0a1c3a,#091426,#061020);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.facilities-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+}
+
+/* MAIN LAYOUT */
+
+.facilities-container{
+display:flex;
+gap:40px;
+align-items:flex-start;
+}
+
+/* SIDEBAR */
+
+.facilities-sidebar{
+width:260px;
+border-right:1px solid rgba(255,255,255,0.3);
+padding-right:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:10px;
+padding:20px;
+}
+
+.facilities-sidebar h3{
+color:#ff3385;
+margin-bottom:15px;
+border-bottom:1px solid rgba(255,255,255,0.4);
+padding-bottom:5px;
+}
+
+.facilities-sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.facilities-sidebar li{
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+cursor:pointer;
+color:white;
+font-size:14px;
+}
+
+.facilities-sidebar li:hover{
+text-decoration:underline;
+color:#ffd000;
+}
+
+/* CONTENT AREA */
+
+.facilities-content{
+flex:1;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* FACILITY CARD */
+
+.facility-item{
+display:flex;
+align-items:flex-start;
+gap:15px;
+
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:10px;
+
+backdrop-filter:blur(8px);
+
+transition:0.3s;
+}
+
+.facility-item:hover{
+background:rgba(255,255,255,0.1);
+transform:translateY(-5px);
+}
+
+.facility-item img{
+width:140px;
+height:90px;
+border-radius:6px;
+object-fit:cover;
+border:2px solid white;
+}
+
+.facility-text h4{
+color:#ff3385;
+margin-bottom:6px;
+}
+
+.facility-text p{
+font-size:14px;
+color:#cbd5e1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.facilities-container{
+flex-direction:column;
+}
+
+.facilities-sidebar{
+width:100%;
+border-right:none;
+margin-bottom:30px;
+}
+
+.facilities-content{
+grid-template-columns:1fr;
+}
+
+}
+
+/* PLACEMENT SECTION */
+
+#placement{
+scroll-margin-top:80px;
+}
+
+.placement-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:linear-gradient(135deg,#0f2f66,#081d3c);
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.placement-title{
+font-size:36px;
+margin-bottom:50px;
+}
+
+/* LAYOUT */
+
+.placement-container{
+display:flex;
+gap:60px;
+align-items:center;
+width:100%;
+max-width:1200px;
+}
+
+/* SIDEBAR */
+
+.placement-sidebar{
+width:280px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:12px;
+padding:25px;
+}
+
+.placement-sidebar ul{
+list-style:none;
+}
+
+.placement-sidebar li{
+padding:14px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.placement-sidebar a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+.placement-sidebar a:hover{
+color:#ffd000;
+}
+
+/* BANNER */
+
+.placement-banner img{
+width:800px;
+border-radius:10px;
+border:3px solid yellow;
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* RECRUITERS */
+
+.recruiter-title{
+margin-top:70px;
+font-size:34px;
+margin-bottom:40px;
+}
+
+.recruiter-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+max-width:1100px;
+width:100%;
+justify-items:center;
+}
+
+
+.recruiter-grid img{
+width:150px;
+height:90px;
+object-fit:contain;
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+
+
+/* RECRUITER GRID */
+
+.recruiter-grid{
+display:grid;
+grid-template-columns:repeat(5, 1fr);
+gap:40px;
+max-width:1100px;
+margin:auto;
+justify-items:center;
+}
+
+/* CARD */
+
+.recruiter-card{
+width:180px;
+height:120px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+padding:15px;
+transition:0.3s;
+}
+
+/* IMAGE */
+
+.recruiter-card img{
+width:100%;
+height:100%;
+object-fit:contain;   /* important */
+
+}
+
+/* HOVER */
+
+.recruiter-cards:hover{
+transform:scale(1.08);
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.placement-container{
+flex-direction:column;
+}
+
+.placement-banner img{
+width:100%;
+}
+
+}
+/* TABLET DEVICES */
+
+@media(max-width:1100px){
+
+.placement-container{
+gap:40px;
+}
+
+.placement-banner img{
+width:100%;
+max-width:650px;
+}
+
+.recruiter-grid{
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+}
+
+/* MOBILE RECRUITER GRID FIX */
+
+@media(max-width:768px){
+
+.recruiter-grid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.recruiter-cards{
+width:100%;
+max-width:150px;
+}
+
+.recruiter-grid img{
+width:100%;
+height:70px;
+}
+
+}
+
+@media(max-width:420px){
+
+.recruiter-grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.recruiter-grid img{
+height:60px;
+}
+
+}
+
+
+/* MOBILE DEVICES */
+
+@media(max-width:900px){
+
+.placement-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.placement-sidebar{
+width:100%;
+max-width:420px;
+}
+
+.placement-banner img{
+width:100%;
+max-width:500px;
+}
+
+.recruiter-grid{
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+}
+
+
+/* SMALL MOBILE DEVICES */
+
+@media(max-width:500px){
+
+.placement-title{
+font-size:28px;
+}
+
+.recruiter-title{
+font-size:26px;
+}
+
+.recruiter-grid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.recruiter-grid img{
+width:120px;
+height:70px;
+}
+
+.placement-sidebar a{
+font-size:14px;
+}
+
+}
+/* COMMITTEES SECTION */
+
+#committees{
+scroll-margin-top:80px;
+}
+
+.committees-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:linear-gradient(135deg,#0a1c3a,#091426,#061020);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.committees-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+}
+
+/* MAIN LAYOUT */
+
+.committees-container{
+display:flex;
+gap:40px;
+align-items:flex-start;
+}
+
+/* SIDEBAR */
+
+.committees-sidebar{
+width:260px;
+border-right:1px solid rgba(255,255,255,0.3);
+padding-right:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:10px;
+padding:20px;
+}
+
+.committees-sidebar h3{
+color:#ff3385;
+margin-bottom:15px;
+border-bottom:1px solid rgba(255,255,255,0.4);
+padding-bottom:5px;
+}
+
+.committees-sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.committees-sidebar li{
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+cursor:pointer;
+font-size:14px;
+}
+
+.committees-sidebar li a{
+text-decoration:none;
+color:white;
+display:block;
+width:100%;
+}
+
+.committees-sidebar li a:hover{
+color:#ffd000;
+text-decoration:underline;
+}
+
+.committees-sidebar li:hover{
+text-decoration:underline;
+color:#ffd000;
+}
+
+/* CONTENT AREA */
+
+.committees-content{
+flex:1;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* CARD */
+
+.committee-item{
+display:flex;
+align-items:flex-start;
+gap:15px;
+
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:10px;
+
+backdrop-filter:blur(8px);
+
+transition:0.3s;
+}
+
+.committee-item:hover{
+background:rgba(255,255,255,0.1);
+transform:translateY(-5px);
+}
+
+.committee-item img{
+width:140px;
+height:90px;
+border-radius:6px;
+object-fit:cover;
+border:2px solid white;
+}
+
+.committee-text h4{
+color:#ff3385;
+margin-bottom:6px;
+}
+
+.committee-text p{
+font-size:14px;
+color:#cbd5e1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.committees-container{
+flex-direction:column;
+}
+
+.committees-sidebar{
+width:100%;
+border-right:none;
+margin-bottom:30px;
+}
+
+.committees-content{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ALUMNI SECTION */
+
+#alumni{
+scroll-margin-top:80px;
+}
+
+.alumni-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:#0f2f66;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.alumni-title{
+text-align:center;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.alumni-desc{
+text-align:center;
+max-width:900px;
+margin:auto;
+margin-bottom:60px;
+color:#cbd5e1;
+line-height:1.7;
+}
+
+/* GRID */
+
+.alumni-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+/* CARD */
+
+.alumni-card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:15px;
+padding:30px;
+text-align:center;
+transition:0.3s;
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.alumni-card:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.12);
+}
+
+/* ICON */
+
+.alumni-icon{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.alumni-card h3{
+margin-bottom:10px;
+}
+
+.alumni-card p{
+font-size:14px;
+color:#cbd5e1;
+line-height:1.6;
+}
+
+/* TABLET DEVICES */
+
+@media(max-width:1100px){
+
+.alumni-container{
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.alumni-desc{
+max-width:700px;
+}
+
+}
+
+
+/* MOBILE DEVICES */
+
+@media(max-width:768px){
+
+.alumni-section{
+padding:80px 6%;
+}
+
+.alumni-title{
+font-size:30px;
+}
+
+.alumni-desc{
+font-size:15px;
+margin-bottom:40px;
+}
+
+.alumni-container{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.alumni-card{
+padding:25px;
+}
+
+}
+
+
+/* SMALL MOBILE DEVICES */
+
+@media(max-width:480px){
+
+.alumni-title{
+font-size:26px;
+}
+
+.alumni-desc{
+font-size:14px;
+}
+
+.alumni-icon{
+font-size:34px;
+}
+
+.alumni-card h3{
+font-size:18px;
+}
+
+.alumni-card p{
+font-size:13px;
+}
+
+}
+
+/* CONTACT */
+
+.contact-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:
+linear-gradient(rgba(10,28,58,0.85), rgba(10,28,58,0.85)),
+url("images/contact-bg.jpeg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+}
+
+.contact-info{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:40px;
+}
+
+.contact-title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+}
+
+
+.contact-details{
+display:flex;
+gap:40px;
+}
+
+.contact-form{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:40px;
+}
+
+.contact-form form{
+display:flex;
+flex-direction:column;
+gap:35px;
+}
+
+.form-row{
+display:flex;
+gap:40px;
+}
+
+.form-row input{
+width:100%;
+}
+
+.contact-form input,
+.contact-form textarea{
+background:transparent;
+border:none;
+border-bottom:1px solid #6b7a99;
+padding:10px;
+color:white;
+}
+
+.contact-form textarea{
+height:90px;
+}
+
+.contact-form button{
+background:transparent;
+border:1px solid white;
+color:white;
+padding:10px;
+cursor:pointer;
+}
+
+/* MODERN FOOTER */
+
+.main-footer{
+background:#081d3c;
+color:white;
+padding:60px 8% 20px;
+}
+
+/* GRID */
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+margin-bottom:40px;
+}
+
+/* COLUMN */
+
+.footer-col h3{
+margin-bottom:15px;
+color:#ffd000;
+}
+
+.footer-col h4{
+margin-bottom:15px;
+color:#e0c031;
+}
+
+.footer-col p{
+font-size:14px;
+line-height:1.6;
+color:#cbd5e1;
+}
+
+/* LINKS */
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin-bottom:10px;
+}
+
+.footer-col ul li a{
+text-decoration:none;
+color:#cbd5e1;
+font-size:14px;
+}
+
+.footer-col ul li a:hover{
+color:#ffd000;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+margin-top:15px;
+}
+
+.social-icons a{
+display:inline-block;
+width:35px;
+height:35px;
+line-height:35px;
+text-align:center;
+background:#0f2f66;
+border-radius:50%;
+margin-right:8px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+background:#ffd000;
+color:#081d3c;
+}
+
+/* BOTTOM BAR */
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+text-align:center;
+font-size:14px;
+color:#cbd5e1;
+}
+
+.footer-bottom span{
+color:#ffd000;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.main-footer{
+text-align:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+/* SUCCESS POPUP */
+
+.popup{
+position:fixed;
+top:30px;
+right:30px;
+background:#28a745;
+color:white;
+padding:14px 22px;
+border-radius:8px;
+font-size:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+opacity:0;
+transform:translateY(-20px);
+transition:0.4s;
+z-index:9999;
+}
+
+.popup.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.popup{
+right:50%;
+transform:translate(50%,-20px);
+}
+
+.popup.show{
+transform:translate(50%,0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!--<header class="header" id="home">
+<img src="images/Logoclg.jpg">
+</header>-->
+
+<header class="header" id="home">
+
+<div class="header-container">
+
+<!-- LEFT LOGO -->
+<div class="logo-left">
+<img src="images/college-logo.jpeg" alt="College Logo">
+</div>
+
+<!-- CENTER TITLE -->
+<div class="header-text">
+<h2 class="tamil-title">
+அரசினர் பொறியியல் கல்லூரி, ஈரோடு
+</h2>
+<h1 class="english-title">
+Government College of Engineering, Erode
+</h1>
+<p class="affiliation">
+(Approved by AICTE, New Delhi & Affiliated to Anna University, Chennai)
+</p>
+</div>
+
+<!-- RIGHT LOGO -->
+<div class="logo-right">
+<img src="images/tamilnadu-logo.jpeg" alt="Tamil Nadu Government">
+</div>
+
+</div>
+
+</header>
+
+<nav>
+
+<div class="nav-container">
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#academics">Academics</a>
+<a href="#facilities">Facilities</a>
+<a href="#placement">Placement</a>
+<a href="#committees">Committees</a>
+<a href="https://www.gcee.ac.in/AICTE/AICTE_2025-26.PDF" target="_blank">AICTE</a>
+<a href="https://www.gcee.ac.in/NIRF/NIRF2024.pdf" target="_blank">NIRF</a>
+<a href="https://examgcee.blogspot.com/" target="_blank">Exam Cell</a>
+<a href="#alumni">Alumni</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO SLIDER -->
+
+<div class="hero-container">
+
+<div class="slider-wrapper">
+
+<div class="slider">
+
+<div class="slide"><img src="images/adminblock.jpg"></div>
+<div class="slide"><img src="images/night.jpg"></div>
+<div class="slide"><img src="images/auditorium.jpeg"></div>
+<div class="slide"><img src="images/nammagce.jpeg"></div>
+<div class="slide"><img src="images/glitterygce.jpg"></div>
+
+</div>
+
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+
+<div class="dots"></div>
+
+</div>
+
+</div>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="announcement-bar">
+<marquee>
+Applications invited for incubation positions at GCEE StartupTN Pre-Incubation Centre •
+Congratulations to our student V.KRISHNAMOORTHY placed with salary Rs.38.5 Lakhs •
+Students placed in CADENCE DESIGN SYSTEMS.
+</marquee>
+</div>
+
+
+
+<!-- About -->
+
+
+<section class="about-section" id="about">
+
+<h2 class="section-title">About Government College of Engineering, Erode</h2>
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+<h2>Welcome to Government College of Engineering, Erode</h2>
+
+<p>
+Government College of Engineering, Erode (formerly Institute of Road and Transport Technology – IRTT) is one of the premier government engineering institutions in Tamil Nadu. Established in 1984 under the Institute of Road and Transport by the Tamil Nadu State Transport Corporation, the college was created to provide quality technical education to students across the state. In 2021, the institution was transferred to the Directorate of Technical Education (DoTE), Government of Tamil Nadu and renamed as Government College of Engineering, Erode. The college is affiliated to Anna University, Chennai and approved by AICTE, New Delhi. Located in a green campus between Chithode and Bhavani, the institution offers excellent infrastructure, modern laboratories, library facilities, and experienced faculty members. GCEE provides undergraduate and postgraduate engineering programs and encourages students to participate in research, innovation, and industry collaborations. With strong academic standards and an active placement cell, the college continues to produce skilled engineers who contribute to technological and societal development.
+</p>
+
+</div>
+
+<div class="about-extra">
+
+<!-- PRINCIPAL -->
+
+<div class="about-box">
+
+<img src="images/principal.jpeg">
+
+<div>
+<h4>PRINCIPAL</h4>
+<p>Dr. A. SARADHA, Ph.D.,</p>
+</div>
+
+</div>
+
+
+<!-- FEES DETAILS -->
+
+<div class="about-box">
+
+<a href="images/fee.jpg" target="_blank">
+
+<img src="images/fee.jpg">
+
+</a>
+
+<div>
+<h4>Fees Details</h4>
+<p>
+<a href="images/fees.png" target="_blank" class="fees-link">
+View Fees Structure
+</a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+<br>
+
+<div class="flow-container">
+
+<!-- 1 -->
+
+<div class="flow-card">
+<h3>1. Vision</h3>
+<p>
+To become a center of excellence in engineering education, research, and innovation by producing competent engineers who contribute to technological advancement and societal development.
+</p>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 2 -->
+
+<div class="flow-card">
+<h3>2. Mission</h3>
+<ul>
+<li>Provide quality technical education</li>
+<li>Promote research and innovation</li>
+<li>Encourage industry collaboration</li>
+<li>Develop ethical engineers</li>
+</ul>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 3 -->
+
+<div class="flow-card">
+<h3>3. Campus Highlights</h3>
+<ul>
+<li>Green campus between Chithode & Bhavani</li>
+<li>Advanced laboratories</li>
+<li>Central library facilities</li>
+<li>Hostels and sports facilities</li>
+</ul>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 4 -->
+
+<div class="flow-card">
+<h3>4. Departments</h3>
+<p>
+Auto, CSE, IT, Mechanical, EEE, ECE and Civil Engineering departments providing undergraduate and CSE, Civil Engineering departments providing postgraduate programs.
+</p>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 5 -->
+
+<div class="flow-card">
+<h3>5. Research & Innovation</h3>
+<p>
+Research projects, industry collaborations, and startup incubation initiatives encourage innovation and technological development.
+</p>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 6 -->
+
+<div class="flow-card">
+<h3>6. Placements</h3>
+<p>
+Active placement cell with recruiters like TCS,Zoho, Infosys, Cognizant, IBM and other top MNC companies.
+</p>
+</div>
+
+<div class="arrow">➜</div>
+
+<!-- 7 -->
+
+<div class="flow-card">
+<h3>7. Student Activities</h3>
+<p>
+Students participate in symposiums, hackathons, cultural events, sports competitions and entrepreneurship programs.
+</p>
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="stats-section">
+
+<div class="stats">
+
+<div class="stat-circle light">
+<h2>200+</h2>
+<p>Acres Campus</p>
+</div>
+
+<div class="stat-circle dark">
+<h2>1500+</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-circle purple">
+<h2>100+</h2>
+<p>Faculty Members</p>
+</div>
+
+<div class="stat-circle grey">
+<h2>90%+</h2>
+<p>Placement Rate</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ACADEMICS SECTION -->
+
+<section class="academics-section" id="academics">
+
+<h2 class="academics-title">Academic Programmes & Governance</h2>
+
+<div class="dashboard">
+
+<!-- UG COURSES -->
+
+<div class="column">
+
+<div class="col-header header-blue">UG Courses</div>
+
+<div class="row">
+<h3>Engineering Streams</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-blue">Civil Engineering</a>
+<a href="#" class="pill pill-blue">Mechanical Engineering</a>
+<a href="#" class="pill pill-blue">Automobile Engineering</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Computing & Tech</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-blue">Computer Science</a>
+<a href="#" class="pill pill-blue">Information Technology</a>
+<a href="#" class="pill pill-blue">Data Science</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Electronics</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-blue">Electronics & Communication</a>
+<a href="#" class="pill pill-blue">Electrical & Electronics</a>
+</div>
+</div>
+
+</div>
+
+<!-- PG COURSES -->
+
+<div class="column">
+
+<div class="col-header header-coral">PG Courses</div>
+
+<div class="row">
+<h3>Advanced Engineering</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-coral">M.E Structural</a>
+<a href="#" class="pill pill-coral">M.E Computer Science</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Research</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-coral">Ph.D Programmes</a>
+<a href="#" class="pill pill-coral">Research Centers</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Admissions</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-coral">TNEA Counseling</a>
+<a href="#" class="pill pill-coral">Lateral Entry</a>
+<a href="#" class="pill pill-coral">PG Entrance</a>
+</div>
+</div>
+
+</div>
+
+<!-- GOVERNANCE -->
+
+<div class="column">
+
+<div class="col-header header-green">Governance</div>
+
+<div class="row">
+<h3>Institution</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-green">Administration</a>
+<a href="#" class="pill pill-green">Academic Council</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Policies</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-green">Anti Ragging</a>
+<a href="#" class="pill pill-green">Code of Conduct</a>
+<a href="#" class="pill pill-green">IT Policy</a>
+</div>
+</div>
+
+<div class="row">
+<h3>Support</h3>
+<div class="pill-container">
+<a href="#" class="pill pill-green">Exam Cell</a>
+<a href="#" class="pill pill-green">Student Support</a>
+<a href="#" class="pill pill-green">Placement Cell</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FACILITIES SECTION -->
+
+<section class="facilities-section"  id="facilities">
+
+<h2 class="facilities-title">Campus Facilities</h2>
+
+<div class="facilities-container">
+
+<!-- SIDEBAR -->
+
+<div class="facilities-sidebar">
+
+<h3>Campus Highlights</h3>
+
+<ul>
+<li>Library</li>
+<li>Sports</li>
+<li>Auditorium</li>
+<li>Medical Facilities</li>
+<li>Rules & Regulations</li>
+<li>Cafeteria</li>
+<li>Transport Facilities</li>
+<li>Scholarships</li>
+</ul>
+
+</div>
+
+
+<!-- CONTENT AREA -->
+
+<div class="facilities-content">
+
+<div class="facility-item">
+<img src="images/library.jpg">
+<div class="facility-text">
+<h4>Central Library</h4>
+<p>Modern digital library with thousands of technical books and journals.</p>
+</div>
+</div>
+
+<div class="facility-item">
+<img src="images/campusevent.jpeg">
+<div class="facility-text">
+<h4>Campus Events</h4>
+<p>Students participate in symposiums, cultural programs and innovation events.</p>
+</div>
+</div>
+
+<div class="facility-item">
+<img src="images/studentclub.jpeg">
+<div class="facility-text">
+<h4>Student Clubs</h4>
+<p>Various clubs encourage creativity, leadership and innovation.</p>
+</div>
+</div>
+
+<div class="facility-item">
+<img src="images/hostels.jpeg">
+<div class="facility-text">
+<h4>Hostels</h4>
+<p>Boys hostel, girls hostel and PG hostel with modern facilities.</p>
+</div>
+</div>
+
+<div class="facility-item">
+<img src="images/stadium.jpeg">
+<div class="facility-text">
+<h4>Sports Facilities</h4>
+<p>Indoor and outdoor sports facilities including cricket, football and athletics.</p>
+</div>
+</div>
+
+<div class="facility-item">
+<img src="images/nss.jpeg">
+<div class="facility-text">
+<h4>NSS</h4>
+<p>National Service Scheme activities for community service.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLACEMENT SECTION -->
+
+<section class="placement-section" id="placement">
+
+<h2 class="placement-title">Training & Placement Cell</h2>
+
+<div class="placement-container">
+
+<!-- LEFT MENU -->
+
+<div class="placement-sidebar">
+
+<ul>
+
+<li>
+<a href="https://www.gcee.ac.in/placementstatistics.php" target="_blank">
+Placement Statistics
+</a>
+</li>
+
+<li>
+<a href="https://www.gcee.ac.in/placementtraining.php" target="_blank">
+Placement Trainings
+</a>
+</li>
+
+<li>
+<a href="https://www.gcee.ac.in/placementrequiters.php" target="_blank">
+Our Recruiters
+</a>
+</li>
+
+<li>
+<a href="https://www.gcee.ac.in/placementcontact.php" target="_blank">
+Placement Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- RIGHT IMAGE -->
+
+<div class="placement-banner">
+
+<img src="images/placement.png" alt="Placement Banner">
+
+</div>
+
+</div>
+
+
+<!-- CAMPUS RECRUITERS -->
+
+<h2 class="recruiter-title">Our Campus Recruiters</h2>
+
+<div class="recruiter-grid">
+
+<div class="recruiter-cards"><img src="images/cognizant.png"></div>
+<div class="recruiter-cards"><img src="images/zoho.png"></div>
+<div class="recruiter-cards"><img src="images/tcs.jpeg"></div>
+<div class="recruiter-cards"><img src="images/techmahendra.jpeg"></div>
+<div class="recruiter-cards"><img src="images/tafe.jpeg"></div>
+<div class="recruiter-cards"><img src="images/polaris.jpeg"></div>
+<div class="recruiter-cards"><img src="images/nokia.jpeg"></div>
+<div class="recruiter-cards"><img src="images/infoview.jpeg"></div>
+<div class="recruiter-cards"><img src="images/infosys.jpeg"></div>
+<div class="recruiter-cards"><img src="images/ibm.jpeg"></div>
+<div class="recruiter-cards"><img src="images/hcl.jpeg"></div>
+<div class="recruiter-cards"><img src="images/csscorps.jpeg"></div>
+<div class="recruiter-cards"><img src="images/capegemini.jpeg"></div>
+<div class="recruiter-cards"><img src="images/cadence.jpeg"></div>
+<div class="recruiter-cards"><img src="images/hexaware.jpeg"></div>
+</div>
+</section>
+
+<!-- COMMITTEES SECTION -->
+
+<section class="committees-section" id="committees">
+
+<h2 class="committees-title">College Committees</h2>
+
+<div class="committees-container">
+
+<!-- SIDEBAR -->
+
+<div class="committees-sidebar">
+
+<h3>Committees</h3>
+
+<ul>
+<li>
+<a href="https://www.gcee.ac.in/Committees/Antiragging.pdf" target="_blank">
+Anti Ragging Committee
+</a>
+</li>
+<li>
+<a href="https://www.gcee.ac.in/Committees/QAC.pdf" target="_blank">
+Internal Quality Assurance Cell
+</a>
+</li>
+<li>
+<a href="https://www.gcee.ac.in/Committees/R&D.pdf" target="_blank">
+R&D Committee
+</a>
+</li>
+<li>Women Empowerment Cell</li>
+<li>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdDpRdNni6GdU9FOWQVnoOKR5iy0iiq-i5euBM2RA8qj2bSCw/viewform?pli=1" target="_blank">
+Grievance Redressal Cell
+</a>
+</li>
+<li>SC/ST Cell</li>
+<li>
+<a href="https://www.gcee.ac.in/Committees/StudentCounsellingCommittee.pdf" target="_blank">
+Student Counselling Committee
+</a>
+</li>
+<li>
+<a href="https://www.gcee.ac.in/Committees/GCEE_ICC_2025.jpg" target="_blank">
+Internal Complaints Committee
+</a>
+</li>
+</ul>
+
+</div>
+
+
+<!-- CONTENT AREA -->
+
+<div class="committees-content">
+
+<div class="committee-item">
+<img src="images/ragging.png">
+<div class="committee-text">
+<h4>Anti Ragging Committee</h4>
+<p>
+Ensures a ragging-free campus and maintains discipline and safety among students.
+</p>
+</div>
+</div>
+
+<div class="committee-item">
+<img src="images/iqac.jpg">
+<div class="committee-text">
+<h4>Internal Quality Assurance Cell</h4>
+<p>
+Monitors academic quality, teaching standards and institutional improvements.
+</p>
+</div>
+</div>
+
+<div class="committee-item">
+<img src="images/wdc.jpg">
+<div class="committee-text">
+<h4>Women Empowerment Cell</h4>
+<p>
+Promotes gender equality, safety awareness and empowerment programs.
+</p>
+</div>
+</div>
+
+<div class="committee-item">
+<img src="images/stc.png">
+<div class="committee-text">
+<h4>Student Welfare Committee</h4>
+<p>
+Supports student well-being, academic guidance and extracurricular activities.
+</p>
+</div>
+</div>
+
+<div class="committee-item">
+<img src="images/grc.jpg">
+<div class="committee-text">
+<h4>Grievance Redressal Cell</h4>
+<p>
+Handles student grievances and ensures a fair resolution process.
+</p>
+</div>
+</div>
+
+<div class="committee-item">
+<img src="images/placement.png">
+<div class="committee-text">
+<h4>Placement Committee</h4>
+<p>
+Coordinates placement activities, internships and industry collaborations.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ALUMNI SECTION -->
+
+<section class="alumni-section" id="alumni">
+
+<h2 class="alumni-title">Alumni Network</h2>
+
+<p class="alumni-desc">
+The Alumni Association of Government College of Engineering, Erode plays an important role in strengthening the bond between the institution and its graduates. Our alumni are successfully working in leading national and multinational organizations, contributing to innovation, technology, entrepreneurship, and societal development. The alumni network helps current students through mentorship, career guidance, internships, and industry connections.
+</p>
+
+<div class="alumni-container">
+
+<div class="alumni-card">
+<div class="alumni-icon">🎓</div>
+<h3>Strong Alumni Community</h3>
+<p>
+Thousands of graduates from GCEE are working across the globe in engineering, research, management, and entrepreneurship fields.
+</p>
+</div>
+
+<div class="alumni-card">
+<div class="alumni-icon">🤝</div>
+<h3>Mentorship & Guidance</h3>
+<p>
+Alumni actively support students by sharing industry knowledge, mentoring projects, and guiding career opportunities.
+</p>
+</div>
+
+<div class="alumni-card">
+<div class="alumni-icon">🏢</div>
+<h3>Industry Connections</h3>
+<p>
+Many alumni hold key positions in top companies and help strengthen industry collaborations and campus recruitment.
+</p>
+</div>
+
+<div class="alumni-card">
+<div class="alumni-icon">📅</div>
+<h3>Alumni Meet</h3>
+<p>
+Regular alumni meets and reunions help reconnect graduates with the institution and foster lifelong relationships.
+</p>
+</div>
+
+</div>
+<br>
+
+<p style="text-align:center; margin-top:30px;">
+<a href="https://www.gcee.ac.in/Alumni/AlumniContribution_2008-2025.pdf" 
+target="_blank" 
+style="color:white; text-decoration:underline; font-size:20px;">
+List of alumni contributions to the College infrastructure from 2008 to till date
+</a>
+</p>
+
+
+<p style="text-align:center; margin-top:40px;">
+<a href="https://www.irttalumni.org/" 
+target="_blank" 
+style="color:white; font-size:20px; text-decoration:none;">
+Click here to visit GCEE(IRTT) Alumni website
+</a>
+</p>
+
+</section>
+
+
+
+<section class="contact-section" id="contact">
+
+<h2 class="contact-title">Contact Us</h2>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h3>Address:</h3>
+<p>
+Government College of Engineering (IRTT)<br>
+Vasavi College Post<br>
+Erode - 638316<br>
+Tamil Nadu, India
+</p>
+<br>
+<div class="info-right">
+
+<h4>Contact:</h4>
+<p><b>Principal :</b> 9280091825</p>
+<p><b>Help Desk :</b> 9280091826</p>
+<p><b>Office :</b> +91 0424 2533579</p>
+<p><b>Students Admission :</b> 9280091827</p>
+<p><b>Accounts Office :</b> 9280091828</p>
+<p><b>Exam Cell :</b> 9280091829</p>
+<p><b>Placement Cell :</b> 9280091830</p>
+
+</div>
+<br>
+<h4>Mail:</h4>
+<p>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=gceeprincipal@gmail.com" style="color:white;">
+gceeprincipal@gmail.com
+</a>
+</p>
+
+
+</div>
+
+<div class="contact-form">
+
+<form onsubmit="showMessage(event)">
+
+<div class="form-row">
+<input type="text" placeholder="FIRST NAME">
+<input type="text" placeholder="LAST NAME">
+</div>
+
+<div class="form-row">
+<input type="email" placeholder="EMAIL ADDRESS">
+<input type="text" placeholder="PHONE NUMBER">
+</div>
+
+<textarea placeholder="MESSAGE"></textarea>
+
+<button type="submit">SUBMIT NOW</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer class="main-footer">
+
+<div class="footer-grid">
+
+<!-- COLLEGE INFO -->
+
+<div class="footer-col">
+<h3>Government College of Engineering, Erode</h3>
+<p>
+Formerly IRTT, established in 1984.  
+Affiliated to Anna University and approved by AICTE.
+</p>
+</div>
+
+<!-- QUICK LINKS -->
+
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#academics">Academics</a></li>
+<li><a href="#facilities">Facilities</a></li>
+<li><a href="#placement">Placement</a></li>
+</ul>
+</div>
+
+<!-- IMPORTANT LINKS -->
+
+<div class="footer-col">
+<h4>Important Links</h4>
+<ul>
+<li><a href="https://www.gcee.ac.in/Committees/Antiragging.pdf">Anti Ragging Committee</a></li>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdDpRdNni6GdU9FOWQVnoOKR5iy0iiq-i5euBM2RA8qj2bSCw/viewform?pli=1">Grievance Cell</a></li>
+<li><a href="https://examgcee.blogspot.com/">Exam Cell</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+
+<!-- CONTACT -->
+
+<div class="footer-col">
+<h4>Address</h4>
+<p>
+Vasavi College Post<br>
+Erode - 638316<br>
+Tamil Nadu, India
+</p>
+
+<div class="social-icons">
+<a href="https://www.facebook.com/people/Gce-Erode/pfbid0Pm6izeW9sSHrQYj7ZUQSL3sBaQtth3i6yK3ZbjMpBqk6HbA6Z1qNNsmTYY7VjR57l/">f</a>
+<a href="https://x.com/GceErode">t</a>
+<a href="https://www.youtube.com/channel/UCDOtasTYkBrmuZTSNCuo6jg">▶</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+
+<p>
+© 2026 Government College of Engineering, Erode
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const slider=document.querySelector(".slider");
+const slides=document.querySelectorAll(".slide");
+const prev=document.querySelector(".prev");
+const next=document.querySelector(".next");
+const dotsContainer=document.querySelector(".dots");
+
+let index=0;
+let interval;
+
+slides.forEach((_,i)=>{
+const dot=document.createElement("span");
+dot.addEventListener("click",()=>goToSlide(i));
+dotsContainer.appendChild(dot);
+});
+
+const dots=document.querySelectorAll(".dots span");
+
+function updateSlider(){
+slider.style.transform=`translateX(-${index*100}%)`;
+dots.forEach(d=>d.classList.remove("active"));
+dots[index].classList.add("active");
+}
+
+function nextSlide(){
+index++;
+if(index>=slides.length) index=0;
+updateSlider();
+}
+
+function prevSlide(){
+index--;
+if(index<0) index=slides.length-1;
+updateSlider();
+}
+
+function goToSlide(i){
+index=i;
+updateSlider();
+}
+
+function startSlider(){
+interval=setInterval(nextSlide,3000);
+}
+
+function stopSlider(){
+clearInterval(interval);
+}
+
+function toggleMenu(){
+const nav=document.getElementById("navLinks");
+nav.classList.toggle("active");
+}
+/* CLOSE MENU AFTER CLICK */
+
+document.querySelectorAll("#navLinks a").forEach(link=>{
+link.addEventListener("click",()=>{
+
+document.getElementById("navLinks").classList.remove("active");
+
+});
+});
+
+next.addEventListener("click",nextSlide);
+prev.addEventListener("click",prevSlide);
+
+slider.addEventListener("mouseenter",stopSlider);
+slider.addEventListener("mouseleave",startSlider);
+
+startSlider();
+updateSlider();
+
+function showMessage(event){
+event.preventDefault();
+const popup=document.getElementById("successPopup");
+popup.classList.add("show");
+setTimeout(()=>{
+popup.classList.remove("show");
+},3000);
+}
+
+</script>
+
+<div id="successPopup" class="popup">
+✔ Message sent successfully!
+</div>
+
+</body>
+</html>
