@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>🏛️ GCEE</title>
+
 <link rel="icon" type="image/png" href="images/college-logo.jpeg">
+
 <style>
 
 *{
@@ -200,7 +202,7 @@ padding:14px;
 text-align:center;
 position:sticky;
 top:0;
-z-index:1000;
+z-index: 10000;
 }
 
 nav a{
@@ -1496,6 +1498,10 @@ font-size:13px;
 
 /* CONTACT */
 
+#contact{
+scroll-margin-top:90px;
+}
+
 .contact-section{
 width:100%;
 min-height:100vh;
@@ -1552,7 +1558,183 @@ display:flex;
 flex-direction:column;
 gap:35px;
 }
+/* CONTACT */
 
+#contact{
+scroll-margin-top:90px;
+}
+
+.contact-section{
+width:100%;
+min-height:100vh;
+padding:100px 8%;
+background:
+linear-gradient(rgba(10,28,58,0.85), rgba(10,28,58,0.85)),
+url("images/contact-bg.jpeg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.contact-title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
+
+/* MAIN GRID */
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:40px;
+}
+
+.contact-info p{
+line-height:1.6;
+}
+
+/* FORM */
+
+.contact-form{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:40px;
+}
+
+.contact-form form{
+display:flex;
+flex-direction:column;
+gap:35px;
+}
+
+.form-row{
+display:flex;
+gap:40px;
+}
+
+.form-row input{
+width:100%;
+}
+
+.contact-form input,
+.contact-form textarea{
+background:transparent;
+border:none;
+border-bottom:1px solid #6b7a99;
+padding:10px;
+color:white;
+}
+
+.contact-form textarea{
+height:90px;
+resize:none;
+}
+
+.contact-form button{
+background:transparent;
+border:1px solid white;
+color:white;
+padding:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+background:white;
+color:#0f2f66;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* TABLET */
+
+@media(max-width:1024px){
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact-title{
+font-size:34px;
+}
+
+.contact-info,
+.contact-form{
+padding:30px;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.contact-section{
+padding:80px 6%;
+}
+
+.contact-title{
+font-size:30px;
+margin-bottom:40px;
+}
+
+.form-row{
+flex-direction:column;
+gap:20px;
+}
+
+.contact-form form{
+gap:25px;
+}
+
+.contact-info,
+.contact-form{
+padding:25px;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.contact-title{
+font-size:26px;
+}
+
+.contact-info p{
+font-size:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+font-size:14px;
+}
+
+.contact-form button{
+width:100%;
+padding:12px;
+}
+
+}
 .form-row{
 display:flex;
 gap:40px;
@@ -2679,10 +2861,43 @@ nav.classList.toggle("active");
 /* CLOSE MENU AFTER CLICK */
 
 document.querySelectorAll("#navLinks a").forEach(link=>{
-link.addEventListener("click",()=>{
 
+link.addEventListener("click",function(e){
+
+const targetId=this.getAttribute("href");
+
+/* only handle internal links */
+if(targetId.startsWith("#")){
+
+e.preventDefault();
+
+const target=document.querySelector(targetId);
+
+if(target){
+
+window.scrollTo({
+top:target.offsetTop-70,
+behavior:"smooth"
+});
+
+}
+
+}
+
+/* close mobile menu */
 document.getElementById("navLinks").classList.remove("active");
 
+});
+
+});
+
+const contactLink = document.querySelector('a[href="#contact"]');
+
+contactLink.addEventListener("click", function(e){
+e.preventDefault();
+
+document.querySelector("#contact").scrollIntoView({
+behavior: "smooth"
 });
 });
 
@@ -2704,6 +2919,15 @@ popup.classList.remove("show");
 },3000);
 }
 
+document.getElementById("contactNav").addEventListener("click", function(e){
+
+e.preventDefault();
+
+document.getElementById("contact").scrollIntoView({
+behavior: "smooth"
+});
+
+});
 </script>
 
 <div id="successPopup" class="popup">
@@ -2711,6 +2935,4 @@ popup.classList.remove("show");
 </div>
 
 </body>
-
 </html>
-
